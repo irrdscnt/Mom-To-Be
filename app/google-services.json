@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "484029597646",
+    "project_id": "momtobe-a51e3",
+    "storage_bucket": "momtobe-a51e3.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:484029597646:android:59ba25cac1438447640d9f",
+        "android_client_info": {
+          "package_name": "com.example.momtobe"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyADQpx3K_nRFkdpefrD3ZuEsIxAh_C0lXA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
