@@ -26,6 +26,9 @@
         <activity android:name=".MainActivity"
             android:theme="@style/Theme.Momtobe.NoActionBar" />
         <activity android:name=".RegistrationActivity" />
+        <activity android:name=".ui.calendar.WeekViewActivity"/>
+        <activity android:name=".ui.calendar.EventEditActivity"/>
+
 
 
     </application>
