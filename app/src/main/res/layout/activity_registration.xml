@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="16dp">
+    android:padding="16dp"
+    android:orientation="vertical"
+    android:background="@drawable/momtobe_bg" >
 
     <TextView
         android:id="@+id/textViewName"
@@ -10,19 +12,23 @@
         android:layout_height="wrap_content"
         android:text="Имя:"
         android:textSize="18sp"
-        android:layout_marginTop="16dp"/>
+        android:layout_marginTop="145dp"
+        android:layout_gravity="center"/>
 
     <EditText
         android:id="@+id/editTextName"
-        android:layout_width="match_parent"
+        android:layout_width="290dp"
         android:layout_height="wrap_content"
         android:layout_below="@id/textViewName"
         android:layout_marginTop="8dp"
+        android:gravity="center"
         android:hint="Введите ваше имя"
-        android:inputType="text"/>
+        android:inputType="text"
+        android:layout_gravity="center"/>
 
     <TextView
         android:id="@+id/textViewDueDate"
+        android:layout_gravity="center"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Срок беременности (недели):"
@@ -32,7 +38,8 @@
 
     <EditText
         android:id="@+id/editTextDueDate"
-        android:layout_width="match_parent"
+        android:layout_gravity="center"
+        android:layout_width="290dp"
         android:layout_height="wrap_content"
         android:layout_below="@id/textViewDueDate"
         android:layout_marginTop="8dp"
@@ -41,6 +48,7 @@
 
     <TextView
         android:id="@+id/textViewPhone"
+        android:layout_gravity="center"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Номер телефона:"
@@ -50,7 +58,8 @@
 
     <EditText
         android:id="@+id/editTextPhone"
-        android:layout_width="match_parent"
+        android:layout_gravity="center"
+        android:layout_width="298dp"
         android:layout_height="wrap_content"
         android:layout_below="@id/textViewPhone"
         android:layout_marginTop="8dp"
@@ -59,6 +68,7 @@
 
     <TextView
         android:id="@+id/textViewEmail"
+        android:layout_gravity="center"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Электронная почта:"
@@ -68,7 +78,8 @@
 
     <EditText
         android:id="@+id/editTextEmail"
-        android:layout_width="match_parent"
+        android:layout_gravity="center"
+        android:layout_width="290dp"
         android:layout_height="wrap_content"
         android:layout_below="@id/textViewEmail"
         android:layout_marginTop="8dp"
@@ -77,6 +88,7 @@
 
     <TextView
         android:id="@+id/textViewPassword"
+        android:layout_gravity="center"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Пароль:"
@@ -86,7 +98,8 @@
 
     <EditText
         android:id="@+id/editTextPassword"
-        android:layout_width="match_parent"
+        android:layout_gravity="center"
+        android:layout_width="290dp"
         android:layout_height="wrap_content"
         android:layout_below="@id/textViewPassword"
         android:layout_marginTop="8dp"
@@ -95,10 +108,12 @@
 
     <Button
         android:id="@+id/buttonRegister"
-        android:layout_width="match_parent"
+        android:layout_gravity="center"
+        android:layout_width="200dp"
         android:layout_height="wrap_content"
+        android:background="@drawable/btn_bg"
         android:layout_below="@id/editTextPassword"
         android:layout_marginTop="24dp"
         android:text="Зарегистрироваться"/>
 
-</RelativeLayout>
+</LinearLayout>
