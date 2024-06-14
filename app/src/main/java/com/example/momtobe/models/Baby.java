@@ -1,25 +1,17 @@
 package com.example.momtobe.models;
 
-public class NutritionAdvice {
+public class Baby {
     private int id;
     private String photo;
     private String description;
     private int trimester;
     private int week;
 
-    public NutritionAdvice(int id, String photo, String description, int trimester,int week) {
+    public Baby(int id, String photo, String description, int trimester, int week) {
         this.id = id;
         this.photo = photo;
         this.description = description;
         this.trimester = trimester;
-        this.week=week;
-    }
-
-    public int getWeek() {
-        return week;
-    }
-
-    public void setWeek(int week) {
         this.week = week;
     }
 
@@ -53,5 +45,13 @@ public class NutritionAdvice {
 
     public void setTrimester(int trimester) {
         this.trimester = trimester;
+    }
+
+    public int getWeek() {
+        return week;
+    }
+
+    public void setWeek(int week) {
+        this.week = week;
     }
 }

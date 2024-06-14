@@ -3,19 +3,55 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical"
-    android:padding="8dp">
+    android:gravity="center"
+    >
+    <TextView
+        android:id="@+id/text_view_trimester"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
 
-    <ImageView
-        android:id="@+id/image_view_photo"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:adjustViewBounds="true"
-        android:scaleType="centerCrop"/>
+        android:layout_marginTop="15dp"
+        android:textSize="16sp"
+        android:textColor="#000"
+        android:background="#D9C7A6F8"
+
+        android:textAlignment="center"/>
 
     <TextView
         android:id="@+id/text_view_description"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
-        android:textSize="16sp"/>
+        android:textSize="16sp"
+        android:textAlignment="center"
+        android:background="#D9C7A6F8"
+        android:textColor="#000" />
+    <TextView
+        android:id="@+id/text_view_week"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:textSize="16sp"
+        android:background="#D9C7A6F8"
+
+        android:textAlignment="center"
+        android:textColor="#000" />
+    <TextView
+        android:id="@+id/text_view_photo_label"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:textSize="16sp"
+        android:textColor="#000"
+        android:text="Фото:"
+        android:textStyle="bold"
+        android:textAlignment="center"/>
+    <ImageView
+        android:id="@+id/image_view_photo"
+        android:layout_width="300dp"
+        android:layout_height="300dp"
+        android:adjustViewBounds="true"
+        android:scaleType="centerCrop"
+        android:contentDescription="Фото"/>
+
 </LinearLayout>

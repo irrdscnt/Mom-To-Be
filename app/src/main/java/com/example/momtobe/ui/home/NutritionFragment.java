@@ -93,11 +93,30 @@ public class NutritionFragment extends Fragment {
 
     private void addNutritionAdviceToView(NutritionAdvice advice) {
         View view = LayoutInflater.from(getContext()).inflate(R.layout.item_nutrition_advice, binding.containerNutritionAdvice, false);
-
+//
+//        TextView textViewDescription = view.findViewById(R.id.text_view_description);
+//        ImageView imageViewPhoto = view.findViewById(R.id.image_view_photo);
+//        TextView textViewWeek=view.findViewById(R.id.text_view_week);
+//        TextView textViewTrimester=view.findViewById(R.id.text_view_trimester);
+//
+//        textViewWeek.setText(String.valueOf(advice.getWeek()));
+//        textViewTrimester.setText(String.valueOf(advice.getTrimester()));
+//        textViewDescription.setText("Семестр: %d",advice.getDescription());
+        TextView textViewTrimester = view.findViewById(R.id.text_view_trimester);
         TextView textViewDescription = view.findViewById(R.id.text_view_description);
+        TextView textViewWeek = view.findViewById(R.id.text_view_week);
         ImageView imageViewPhoto = view.findViewById(R.id.image_view_photo);
 
-        textViewDescription.setText(advice.getDescription());
+        // Convert int values to String and format text
+        String trimesterText = String.format("Триместр: %d", advice.getTrimester());
+        String weekText = String.format("Неделя: %d", advice.getWeek());
+        String descriptionText = String.format("Описание: %s", advice.getDescription());
+
+        // Set text to TextView components
+        textViewTrimester.setText(trimesterText);
+        textViewDescription.setText(descriptionText);
+        textViewWeek.setText(weekText);
+
         Glide.with(this)
                 .load(advice.getPhoto())
                 .into(imageViewPhoto);

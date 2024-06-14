@@ -1,6 +1,7 @@
 package com.example.momtobe.remote_data;
 
 
+import com.example.momtobe.models.Baby;
 import com.example.momtobe.models.NutritionAdvice;
 import com.example.momtobe.models.User;
 import com.example.momtobe.response.LoginResponse;
@@ -20,4 +21,7 @@ public interface Api {
 
     @GET("api/nutrition-advice/trimester/{trimester}/")
     Call<List<NutritionAdvice>> getNutritionAdviceByTrimester(@Path("trimester") int trimester);
+
+    @GET("api/babies/week/{week}/")
+    Call<List<Baby>> getBabyInfoByTrimester(@Path("week") int week);
 }
