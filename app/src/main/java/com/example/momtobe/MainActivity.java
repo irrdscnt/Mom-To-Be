@@ -11,6 +11,8 @@ import android.widget.TextView;
 import com.example.momtobe.ui.calendar.CalendarAdapter;
 import com.example.momtobe.ui.calendar.CalendarUtils;
 import com.example.momtobe.ui.calendar.WeekViewActivity;
+import com.example.momtobe.ui.home.NutritionActivity;
+import com.example.momtobe.ui.home.NutritionFragment;
 import com.google.android.material.snackbar.Snackbar;
 import com.google.android.material.navigation.NavigationView;
 
@@ -116,7 +118,16 @@ public class MainActivity extends AppCompatActivity  implements CalendarAdapter.
     {
         startActivity(new Intent(this, WeekViewActivity.class));
     }
-
+    public void openNutritionFragment(View view) {
+        startActivity(new Intent(this, NutritionActivity.class));
+    }
+//    public void openNutritionFragment(View view) {
+//        // Navigate to NutritionFragment
+//        getSupportFragmentManager().beginTransaction()
+//                .replace(R.id.fragment_container, new NutritionFragment())
+//                .addToBackStack(null)
+//                .commit();
+//    }
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
