@@ -8,6 +8,7 @@ import android.view.View;
 import android.view.Menu;
 import android.widget.TextView;
 
+import com.example.momtobe.ui.babyinfo.BabyInfoActivity;
 import com.example.momtobe.ui.calendar.CalendarAdapter;
 import com.example.momtobe.ui.calendar.CalendarUtils;
 import com.example.momtobe.ui.calendar.WeekViewActivity;
@@ -120,6 +121,9 @@ public class MainActivity extends AppCompatActivity  implements CalendarAdapter.
     }
     public void openNutritionFragment(View view) {
         startActivity(new Intent(this, NutritionActivity.class));
+    }
+    public void openBabyInfoFragment(View view) {
+        startActivity(new Intent(this, BabyInfoActivity.class));
     }
 //    public void openNutritionFragment(View view) {
 //        // Navigate to NutritionFragment

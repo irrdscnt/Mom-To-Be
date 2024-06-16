@@ -33,6 +33,8 @@
         <activity android:name=".ui.calendar.EventEditActivity"/>
         <activity android:name=".ui.home.NutritionActivity"
             android:label="Nutrition Activity"/>
+        <activity android:name=".ui.babyinfo.BabyInfoActivity" />
+
 
 
 

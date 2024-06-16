@@ -61,6 +61,12 @@ public class NutritionFragment extends Fragment {
                 fetchNutritionAdvice(3);
             }
         });
+        binding.buttonBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                getActivity().onBackPressed();
+            }
+        });
     }
 
     private void fetchNutritionAdvice(int trimester) {
