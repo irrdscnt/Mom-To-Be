@@ -125,13 +125,7 @@ public class MainActivity extends AppCompatActivity  implements CalendarAdapter.
     public void openBabyInfoFragment(View view) {
         startActivity(new Intent(this, BabyInfoActivity.class));
     }
-//    public void openNutritionFragment(View view) {
-//        // Navigate to NutritionFragment
-//        getSupportFragmentManager().beginTransaction()
-//                .replace(R.id.fragment_container, new NutritionFragment())
-//                .addToBackStack(null)
-//                .commit();
-//    }
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
