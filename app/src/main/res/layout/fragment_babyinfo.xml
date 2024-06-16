@@ -37,6 +37,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:hint="Введите неделю"
+        android:textColor="@color/black"
         android:inputType="number"
         app:layout_constraintTop_toBottomOf="@+id/textViewDescription"
         app:layout_constraintStart_toStartOf="parent"
@@ -96,6 +97,8 @@
                 android:layout_height="wrap_content"
                 android:background="#D9C7A6F8"
                 android:visibility="gone"
+                android:textAlignment="center"
+                android:textColor="@color/black"
                 android:text="" />
         </LinearLayout>
     </ScrollView>
