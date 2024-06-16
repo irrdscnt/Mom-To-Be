@@ -10,25 +10,35 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.List;
 
 import com.example.momtobe.R;
+import com.example.momtobe.remote_data.Api;
+import com.example.momtobe.remote_data.RetrofitClient;
 import com.example.momtobe.ui.calendar.CalendarAdapter;
 import com.example.momtobe.ui.calendar.CalendarUtils;
 import com.example.momtobe.ui.calendar.Event;
 import com.example.momtobe.ui.calendar.EventAdapter;
 import com.example.momtobe.ui.calendar.EventEditActivity;
 
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+
 public class WeekViewActivity extends AppCompatActivity implements CalendarAdapter.OnItemListener {
     private TextView monthYearText;
     private RecyclerView calendarRecyclerView;
     private ListView eventListView;
+    private Api api;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -38,12 +48,15 @@ public class WeekViewActivity extends AppCompatActivity implements CalendarAdapt
         initWidgets();
         setWeekView();
         Button buttonBack = findViewById(R.id.buttonBack);
+        api = RetrofitClient.getInstance().getApi();
         buttonBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 onBackPressed();
             }
         });
+        getEventsForSelectedDate();
+
     }
 
     private void initWidgets()
@@ -83,6 +96,9 @@ public class WeekViewActivity extends AppCompatActivity implements CalendarAdapt
     {
         CalendarUtils.selectedDate = date;
         setWeekView();
+        getEventsForSelectedDate();
+
+
     }
 
     @Override
@@ -102,5 +118,30 @@ public class WeekViewActivity extends AppCompatActivity implements CalendarAdapt
     public void newEventAction(View view)
     {
         startActivity(new Intent(this, EventEditActivity.class));
+    }
+    private void getEventsForSelectedDate() {
+        String date = CalendarUtils.formattedDate(CalendarUtils.selectedDate);
+        Call<List<Event>> call = api.getEventsByDate(date);
+        call.enqueue(new Callback<List<Event>>() {
+            @Override
+            public void onResponse(Call<List<Event>> call, Response<List<Event>> response) {
+                Log.d("WeekViewActivity", "Response code: " + response.code());
+                if (response.isSuccessful() && response.body() != null) {
+                    List<Event> events = response.body();
+                    Log.d("WeekViewActivity", "Events received: " + events.size());
+                    EventAdapter adapter = new EventAdapter(WeekViewActivity.this, events);
+                    eventListView.setAdapter(adapter);  // Set adapter with updated events
+                } else {
+                    Log.e("WeekViewActivity", "Failed to get events. Response code: " + response.code());
+                    Toast.makeText(WeekViewActivity.this, "No events found", Toast.LENGTH_SHORT).show();
+                }
+            }
+
+            @Override
+            public void onFailure(Call<List<Event>> call, Throwable t) {
+                Log.e("WeekViewActivity", "Error fetching events: " + t.getMessage());
+                Toast.makeText(WeekViewActivity.this, "Error: " + t.getMessage(), Toast.LENGTH_SHORT).show();
+            }
+        });
     }
 }

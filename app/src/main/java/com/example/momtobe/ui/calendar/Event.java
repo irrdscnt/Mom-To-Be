@@ -1,5 +1,7 @@
 package com.example.momtobe.ui.calendar;
 
+import com.google.gson.annotations.SerializedName;
+
 import java.time.LocalDate;
 import java.time.LocalTime;
 import java.util.ArrayList;
@@ -22,12 +24,16 @@ public class Event
     }
 
 
+    @SerializedName("name")
     private String name;
-    private LocalDate date;
-    private LocalTime time;
 
-    public Event(String name, LocalDate date, LocalTime time)
-    {
+    @SerializedName("date")
+    private String date;
+
+    @SerializedName("time")
+    private String time;
+
+    public Event(String name, String date, String time) {
         this.name = name;
         this.date = date;
         this.time = time;
@@ -36,33 +42,35 @@ public class Event
     public Event() {
     }
 
-    public String getName()
-    {
+    public static ArrayList<Event> getEventsList() {
+        return eventsList;
+    }
+
+    public static void setEventsList(ArrayList<Event> eventsList) {
+        Event.eventsList = eventsList;
+    }
+
+    public String getName() {
         return name;
     }
 
-    public void setName(String name)
-    {
+    public void setName(String name) {
         this.name = name;
     }
 
-    public LocalDate getDate()
-    {
+    public String getDate() {
         return date;
     }
 
-    public void setDate(LocalDate date)
-    {
+    public void setDate(String date) {
         this.date = date;
     }
 
-    public LocalTime getTime()
-    {
+    public String getTime() {
         return time;
     }
 
-    public void setTime(LocalTime time)
-    {
+    public void setTime(String time) {
         this.time = time;
     }
 }

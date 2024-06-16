@@ -13,13 +13,14 @@ public class CalendarUtils
 
     public static String formattedDate(LocalDate date)
     {
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd MMMM yyyy");
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+
+//        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd MMMM yyyy");
         return date.format(formatter);
     }
 
-    public static String formattedTime(LocalTime time)
-    {
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("hh:mm:ss a");
+    public static String formattedTime(LocalTime time) {
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("HH:mm:ss");
         return time.format(formatter);
     }
 

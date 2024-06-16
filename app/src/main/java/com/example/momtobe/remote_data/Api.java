@@ -5,6 +5,7 @@ import com.example.momtobe.models.Baby;
 import com.example.momtobe.models.NutritionAdvice;
 import com.example.momtobe.models.User;
 import com.example.momtobe.response.LoginResponse;
+import com.example.momtobe.ui.calendar.Event;
 
 import java.util.List;
 
@@ -24,4 +25,10 @@ public interface Api {
 
     @GET("api/babies/week/{week}/")
     Call<List<Baby>> getBabyInfoByTrimester(@Path("week") int week);
+
+    @POST("api/events/")
+    Call<Void> saveEvent(@Body Event event);
+
+    @GET("api/events/date/{date}/")
+    Call<List<Event>> getEventsByDate(@Path("date") String date);
 }
