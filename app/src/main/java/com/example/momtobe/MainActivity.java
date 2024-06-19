@@ -12,6 +12,7 @@ import com.example.momtobe.ui.babyinfo.BabyInfoActivity;
 import com.example.momtobe.ui.calendar.CalendarAdapter;
 import com.example.momtobe.ui.calendar.CalendarUtils;
 import com.example.momtobe.ui.calendar.WeekViewActivity;
+import com.example.momtobe.ui.fitness.FitnessActivity;
 import com.example.momtobe.ui.home.NutritionActivity;
 import com.example.momtobe.ui.home.NutritionFragment;
 import com.google.android.material.snackbar.Snackbar;
@@ -124,6 +125,9 @@ public class MainActivity extends AppCompatActivity  implements CalendarAdapter.
     }
     public void openBabyInfoFragment(View view) {
         startActivity(new Intent(this, BabyInfoActivity.class));
+    }
+    public void openFitnessFragment(View view) {
+        startActivity(new Intent(this, FitnessActivity.class));
     }
 
     @Override

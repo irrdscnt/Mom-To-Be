@@ -2,6 +2,7 @@ package com.example.momtobe.remote_data;
 
 
 import com.example.momtobe.models.Baby;
+import com.example.momtobe.models.Fitness;
 import com.example.momtobe.models.NutritionAdvice;
 import com.example.momtobe.models.User;
 import com.example.momtobe.response.LoginResponse;
@@ -31,4 +32,7 @@ public interface Api {
 
     @GET("api/events/date/{date}/")
     Call<List<Event>> getEventsByDate(@Path("date") String date);
+
+    @GET("api/fitness/trimester/{trimester}/")
+    Call<List<Fitness>> getFitnessByTrimester(@Path("trimester") int trimester);
 }

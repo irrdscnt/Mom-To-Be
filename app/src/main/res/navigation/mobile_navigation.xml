@@ -19,9 +19,9 @@
 
     <fragment
         android:id="@+id/nav_slideshow"
-        android:name="com.example.momtobe.ui.slideshow.SlideshowFragment"
+        android:name="com.example.momtobe.ui.fitness.FitnessFragment"
         android:label="@string/menu_slideshow"
-        tools:layout="@layout/fragment_slideshow" />
+        tools:layout="@layout/fragment_fitness" />
     <activity
         android:id="@+id/splashActivity"
         android:name="com.example.momtobe.SplashActivity"

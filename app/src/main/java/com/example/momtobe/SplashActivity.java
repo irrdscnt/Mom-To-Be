@@ -4,6 +4,7 @@ package com.example.momtobe;
 import android.animation.ValueAnimator;
 import android.content.Intent;
 import android.graphics.drawable.AnimationDrawable;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.os.Handler;
 import android.widget.ImageView;
@@ -18,13 +19,22 @@ import com.google.firebase.auth.FirebaseUser;
 
 public class SplashActivity extends AppCompatActivity {
     private static int SPLASH_TIME_OUT = 5000;
-
+    private MediaPlayer mediaPlayer;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash);
         ImageView gifImageView = findViewById(R.id.gifImageView);
 
+        mediaPlayer = MediaPlayer.create(this, R.raw.splashmusic);
+        mediaPlayer.start();
+
+        mediaPlayer.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+            @Override
+            public void onCompletion(MediaPlayer mp) {
+                mp.release();
+            }
+        });
         Glide.with(this)
                 .asGif()
                 .load(R.raw.momtobe)
@@ -42,12 +52,6 @@ public class SplashActivity extends AppCompatActivity {
                     startActivity(i);
                     finish();
                 }
-                // Start the main activity
-//                Intent i = new Intent(SplashActivity.this, MainActivity.class);
-//                startActivity(i);
-//
-//                // Close this activity
-//                finish();
             }
         }, SPLASH_TIME_OUT);
     }

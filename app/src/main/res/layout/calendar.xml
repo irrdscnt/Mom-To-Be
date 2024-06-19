@@ -13,7 +13,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:text="Weekly"
+        android:text="Week view"
         android:textColor="@color/blue"
         android:background="@null"
         android:textStyle="bold"
@@ -54,7 +54,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:text="Fitness"
-            android:onClick="openNutritionFragment"
+            android:onClick="openFitnessFragment"
             android:textColor="@android:color/white"
             android:background="@drawable/rounded_button_gradient"/>
     </LinearLayout>

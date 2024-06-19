@@ -34,7 +34,7 @@
         <activity android:name=".ui.home.NutritionActivity"
             android:label="Nutrition Activity"/>
         <activity android:name=".ui.babyinfo.BabyInfoActivity" />
-
+        <activity android:name=".ui.fitness.FitnessActivity" />
 
 
 
